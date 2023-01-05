@@ -1,0 +1,30 @@
+---
+interface Props {
+    title?: string,
+}
+
+const { title = "" } = Astro.props
+import Header from '../components/header.astro'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Another Portfolio Blog {title}</title>
+	</head>
+	<body class="bg-zinc-900 text-gray-100 container mx-auto px-4">
+        <Header />
+        <main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style>
+	.container {
+		max-width: 1200px;
+	}
+</style>

@@ -1,0 +1,37 @@
+---
+const Name = "Mikael Fernandez";
+const Profession = "Web Developer";
+const Description =
+    "Enthusiast in technology and software development. Enthusiast in technology and software development.";
+const refLinkedin = "https://www.linkedin.com/in/mikael-fernandez-067632219/"
+const refGithub = "https://github.com/mycahh"
+
+---
+
+<section class="hero">
+    <div>
+        <h1 class="text-5xl font-bold text-white mb-1">{Name}</h1>
+        <h3 class="text-gray-200 mb-4">{Profession}</h3>
+        <p class="text-gray-400 mb-4">{Description}</p>
+        <div class="mb-16 flex gap-4">
+            <a href={refLinkedin} target="_blank">
+                <img src="/social/linkedin.svg" alt="linkedin icon" width="24" height="24" class="filter invert">
+            </a>
+            <a href={refGithub} target="_blank">
+                <img src="/social/github.svg" alt="github icon"  width="24" height="24" class="filter invert ">
+            </a>
+            
+        </div>
+    </div>
+    <div>
+
+    </div>
+</section>
+
+<style>
+    .hero {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+    }
+
+</style>
