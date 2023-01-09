@@ -1,8 +1,12 @@
 ---
-import Article from './Article.astro'
+import Article from "./Article.astro"
 
+const posts = await Astro.glob('../pages/posts/*.md')
 ---
-    <h3 class="font-bold text-lg mb-2">Lastest Posts</h3>
-    <Article />
-    <Article />
-    <Article />
+<h3 class="font-bold text-xl mb-2">Lastest Posts</h3>
+
+{posts.slice(0,3).map(({ url, frontmatter: {title, releasedDate, tags, durationArticle} }) => (
+    <Article url={url} title={title} releasedDate={releasedDate} tags={tags} durationArticle={durationArticle} />
+))}
+
+<a href="/posts" class="mt-5 block font-bold text-sm">Read More</a>

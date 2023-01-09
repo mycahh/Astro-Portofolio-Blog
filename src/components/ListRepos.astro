@@ -1,0 +1,11 @@
+---
+import Repositories from '../helpers/repositories.json'
+import Repository from './Repository.astro';
+---
+<h3 class="font-bold mb-2 text-xl">Lastest Repositories</h3>
+
+<div>
+{Repositories.slice(0, 3).map(({ id, name, html_url, updated_at, language })=> (
+    <Repository id={id} name={name} html_url={html_url} updated_at={updated_at} language={language} />
+))}
+</div>

@@ -1,0 +1,13 @@
+---
+interface Props {
+    id?: number,
+    name?: string,
+    html_url?: string,
+    updated_at?: string,
+    language?: string
+} 
+
+const { html_url, name } = Astro.props
+---
+
+<a href={html_url} class="block py-4" target="_blank">{name}</a>
